@@ -22,7 +22,7 @@ function Login() {
       //send data to API and go to MyTravel.jsx("/mytravel") GET
       try {
         const response = await axios.get(
-          `travel-service-server-by-prisma-tqp8.vercel.app/traveller/traveller/${travellerEmail}/${travellerPassword}`
+          `http://travel-service-server-by-prisma-tqp8.vercel.app/traveller/${travellerEmail}/${travellerPassword}`
         );
         if (response.status == 200) {
           //get data Traveller and save in memory

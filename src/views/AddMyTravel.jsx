@@ -104,7 +104,7 @@ function AddMyTravel() {
         // });
 
         //Use Axios===========================
-        const response = await axios.post("http://localhost:4000/travel/",
+        const response = await axios.post("http://travel-service-server-by-prisma-tqp8.vercel.app/travel/",
           formData, {
             headers: {
               "Content-Type": "multipart/form-data",
@@ -152,7 +152,7 @@ function AddMyTravel() {
                 src={
                   travelImage == ""
                     ? Travel
-                    : `http://localhost:4000/images/traveller/${travelImage}`
+                    : `${travelImage}`
                 }
               />
               {/* logout */}

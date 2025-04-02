@@ -69,7 +69,7 @@ function AddMyTravel() {
   });
   //+++++++++++++++++++++++++++++++++++++++++++
   const handleSaveTravelClick = async (e) => {
-    console.log(travelPlace, travelStartDate, travelEndDate, travelCostTotal);
+    
     //Validate Register Button
     e.preventDefault();
     if (travelPlace.trim().length == 0) {

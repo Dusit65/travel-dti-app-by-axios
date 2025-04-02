@@ -16,7 +16,6 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import Travel from "./../assets/travel.png"; //Logo image
 import Profile from "../assets/profile.png";
 import axios from "axios";//
-
 //===========================End of Import======================================
 function EditMyTravel() {
   //เอาข้อมูลใน memory มาแสดงที่ AppBar

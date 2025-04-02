@@ -79,8 +79,8 @@ function EditMyTravel() {
       setTravelImage(resData.data["data"].travelImage);
     };
     //Call Func
-    getThisTravel();
-  }, []);
+    if (travelId) getThisTravel();
+  }, [travelId]);
 
   //select file func =================================
   const handleSelectFileClick = (e) => {

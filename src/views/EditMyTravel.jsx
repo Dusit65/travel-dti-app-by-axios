@@ -16,7 +16,9 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import Travel from "./../assets/travel.png"; //Logo image
 import Profile from "../assets/profile.png";
 import axios from "axios";//
+const API_URL = import.meta.env.VITE_API_URL;
 //===========================End of Import======================================
+
 function EditMyTravel() {
   //เอาข้อมูลใน memory มาแสดงที่ AppBar
   //อ่านข้อมูลจาก memory เก็บในตัวแปร
@@ -49,9 +51,8 @@ function EditMyTravel() {
     setTravellerId(traveller.travellerId);
 
     //GetSelectedTravel Func
-    const getThisTravel = async () => {
-      //Use Fetch===========================
-      // const resData = await fetch(
+    const getTravel = async () => {
+      // const response = await fetch(
       //   `http://localhost:4000/travel/one/${travelId}`,
       //   {
       //     method: "GET",
@@ -60,27 +61,19 @@ function EditMyTravel() {
       //     },
       //   }
       // );
-      // const data = await resData.json();
-      // setTravelPlace(data["data"].travelPlace);
-      // setTravelStartDate(data["data"].travelStartDate);
-      // setTravelEndDate(data["data"].travelEndDate);
-      // setTravelCostTotal(data["data"].travelCostTotal);
-      // setTravelImage(data["data"].travelImage);
-
-      //Use Axios===========================
-      const resData = await axios.get(
-        `https://travel-service-server-by-prisma-tqp8.vercel.app/travel/one/${travelId}`
+      const response = await axios.get(
+        `${API_URL}/travel/one/${travelId}`,
       );
-
-      setTravelPlace(resData.data["data"].travelPlace);
-      setTravelStartDate(resData.data["data"].travelStartDate);
-      setTravelEndDate(resData.data["data"].travelEndDate);
-      setTravelCostTotal(resData.data["data"].travelCostTotal);
-      setTravelImage(resData.data["data"].travelImage);
+      const data = await response.data;
+      // setTravel(data["data"]);
+      setTravelPlace(data["data"].travelPlace);
+      setTravelStartDate(data["data"].travelStartDate);
+      setTravelEndDate(data["data"].travelEndDate);
+      setTravelCostTotal(data["data"].travelCostTotal);
+      setTravelImage(data["data"].travelImage);
     };
-    //Call Func
-    if (travelId) getThisTravel();
-  }, [travelId]);
+    getTravel();
+  }, []);
 
   //select file func =================================
   const handleSelectFileClick = (e) => {
@@ -131,7 +124,7 @@ function EditMyTravel() {
       //send data from formData to API (http://localhost:4000/travel) PUT
       try {
         const response = await axios.put(
-          `https://travel-service-server-by-prisma-tqp8.vercel.app/${travelId}`,
+          `${API_URL}/travel/${travelId}`,
           formData,
           {
             headers: {

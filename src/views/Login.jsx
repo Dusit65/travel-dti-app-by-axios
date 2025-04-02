@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Box, Typography, Avatar, TextField, Button } from "@mui/material"; //material ui
 import Travel from "./../assets/travel.png"; //Logo image
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Login() {
   const [travellerEmail, setTravellerEmail] = useState("");
   const [travellerPassword, setTravellerPassword] = useState("");
@@ -22,7 +24,7 @@ function Login() {
       //send data to API and go to MyTravel.jsx("/mytravel") GET
       try {
         const response = await axios.get(
-          `https://travel-service-server-by-prisma-tqp8.vercel.app/traveller/${travellerEmail}/${travellerPassword}`
+          `${API_URL}/traveller/${travellerEmail}/${travellerPassword}`
         );
         if (response.status == 200) {
           //get data Traveller and save in memory

@@ -18,6 +18,8 @@ import { useNavigate } from "react-router-dom";
 import Travel from "./../assets/travel.png"; //Logo image
 import Profile from "../assets/profile.png";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
+//===========================End of Import======================================
 
 function AddMyTravel() {
   const [travellerFullname, setTravellerFullname] = useState("");
@@ -104,7 +106,7 @@ function AddMyTravel() {
         // });
 
         //Use Axios===========================
-        const response = await axios.post("https://travel-service-server-by-prisma-tqp8.vercel.app/travel/",
+        const response = await axios.post(`${API_URL}/travel`,
           formData, {
             headers: {
               "Content-Type": "multipart/form-data",

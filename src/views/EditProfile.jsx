@@ -16,6 +16,7 @@ import { styled } from "@mui/material/styles";
 import Profile from "./../assets/profile.png";
 import Travel from "./../assets/travel.png";
 import axios from "axios"; //Use Axios
+const API_URL = import.meta.env.VITE_API_URL;
 //===========================End of Import======================================
 
 function EditProfile() {
@@ -99,7 +100,7 @@ function EditProfile() {
         //   }
         // );
         const response = await axios.put(
-          `https://travel-service-server-by-prisma-tqp8.vercel.app/traveller/${travellerId}`,
+          `${API_URL}/traveller/${travellerId}`,
           formData,
           {
             headers: {

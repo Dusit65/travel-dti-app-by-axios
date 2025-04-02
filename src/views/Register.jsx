@@ -13,6 +13,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Travel from "./../assets/travel.png";
 import Profile from "./../assets/profile.png";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Register() {
   const [travellerImage, setTravellerImage] = useState(null);
   const [travellerFullname, setTravellerFullname] = useState("");
@@ -56,7 +58,7 @@ function Register() {
         //   method: "POST",
         //   body: formData,
         // });
-        const response = await axios.post("https://travel-service-server-by-prisma-tqp8.vercel.app/traveller/", formData, {
+        const response = await axios.post(`${API_URL}/traveller`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

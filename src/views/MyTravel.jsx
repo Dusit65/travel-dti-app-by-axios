@@ -26,7 +26,7 @@ import Place from "./../assets/travel.png";
 import { Link, useNavigate } from "react-router-dom";
 
 //===========================End of Import======================================
-
+const API_URL = import.meta.env.VITE_API_URL;
 function MyTravel() {
   const [travellerFullname, setTravellerFullname] = useState("");
   const [travellerImage, setTravellerImage] = useState("");
@@ -49,7 +49,7 @@ function MyTravel() {
     //Get data From DB of traveller that login and show in table
     const getAllTravel = async () => {
       const resData = await axios.get(
-        `https://travel-service-server-by-prisma-tqp8.vercel.app/travel/${traveller.travellerId}`
+        `${API_URL}/travel/${traveller.travellerId}`
       );
       //Have a data
       if (resData.status == 200) {
@@ -76,7 +76,7 @@ function MyTravel() {
       // });
       
       //Use Axios===========================
-      const response = await axios.delete(`https://travel-service-server-by-prisma-tqp8.vercel.app/travel/${travelId}`); 
+      const response = await axios.delete(`${API_URL}/travel/${travelId}`); 
         
       if (response.status == 200) {
         alert("ลบข้อมูลเรียบร้อยOwO");

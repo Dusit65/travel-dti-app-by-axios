@@ -69,7 +69,7 @@ function EditMyTravel() {
 
       //Use Axios===========================
       const resData = await axios.get(
-        `http://travel-service-server-by-prisma-tqp8.vercel.app/travel/one/${travelId}`
+        `https://travel-service-server-by-prisma-tqp8.vercel.app/travel/one/${travelId}`
       );
 
       setTravelPlace(resData.data["data"].travelPlace);
@@ -131,7 +131,7 @@ function EditMyTravel() {
       //send data from formData to API (http://localhost:4000/travel) PUT
       try {
         const response = await axios.put(
-          `http://travel-service-server-by-prisma-tqp8.vercel.app/${travelId}`,
+          `https://travel-service-server-by-prisma-tqp8.vercel.app/${travelId}`,
           formData,
           {
             headers: {

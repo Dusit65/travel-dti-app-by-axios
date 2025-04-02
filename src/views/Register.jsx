@@ -56,7 +56,7 @@ function Register() {
         //   method: "POST",
         //   body: formData,
         // });
-        const response = await axios.post("http://travel-service-server-by-prisma-tqp8.vercel.app/traveller/", formData, {
+        const response = await axios.post("https://travel-service-server-by-prisma-tqp8.vercel.app/traveller/", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

@@ -104,7 +104,7 @@ function AddMyTravel() {
         // });
 
         //Use Axios===========================
-        const response = await axios.post("http://travel-service-server-by-prisma-tqp8.vercel.app/travel/",
+        const response = await axios.post("https://travel-service-server-by-prisma-tqp8.vercel.app/travel/",
           formData, {
             headers: {
               "Content-Type": "multipart/form-data",

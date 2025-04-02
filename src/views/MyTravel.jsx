@@ -49,7 +49,7 @@ function MyTravel() {
     //Get data From DB of traveller that login and show in table
     const getAllTravel = async () => {
       const resData = await axios.get(
-        `http://travel-service-server-by-prisma-tqp8.vercel.app/travel/${traveller.travellerId}`
+        `https://travel-service-server-by-prisma-tqp8.vercel.app/travel/${traveller.travellerId}`
       );
       //Have a data
       if (resData.status == 200) {
@@ -76,7 +76,7 @@ function MyTravel() {
       // });
       
       //Use Axios===========================
-      const response = await axios.delete(`http://travel-service-server-by-prisma-tqp8.vercel.app/${travelId}`); 
+      const response = await axios.delete(`https://travel-service-server-by-prisma-tqp8.vercel.app/${travelId}`); 
         
       if (response.status == 200) {
         alert("ลบข้อมูลเรียบร้อยOwO");

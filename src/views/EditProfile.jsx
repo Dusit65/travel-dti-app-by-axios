@@ -99,7 +99,7 @@ function EditProfile() {
         //   }
         // );
         const response = await axios.put(
-          `http://travel-service-server-by-prisma-tqp8.vercel.app/traveller/${travellerId}`,
+          `https://travel-service-server-by-prisma-tqp8.vercel.app/traveller/${travellerId}`,
           formData,
           {
             headers: {

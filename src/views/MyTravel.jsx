@@ -76,7 +76,7 @@ function MyTravel() {
       // });
       
       //Use Axios===========================
-      const response = await axios.delete(`https://travel-service-server-by-prisma-tqp8.vercel.app/${travelId}`); 
+      const response = await axios.delete(`https://travel-service-server-by-prisma-tqp8.vercel.app/travel/${travelId}`); 
         
       if (response.status == 200) {
         alert("ลบข้อมูลเรียบร้อยOwO");

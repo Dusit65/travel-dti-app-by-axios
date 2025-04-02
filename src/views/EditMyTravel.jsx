@@ -16,7 +16,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import Travel from "./../assets/travel.png"; //Logo image
 import Profile from "../assets/profile.png";
 import axios from "axios";//
-import { Edit } from "@mui/icons-material";
+
 //===========================End of Import======================================
 function EditMyTravel() {
   //เอาข้อมูลใน memory มาแสดงที่ AppBar
@@ -70,7 +70,7 @@ function EditMyTravel() {
 
       //Use Axios===========================
       const resData = await axios.get(
-        `http://localhost:4000/travel/one/${travelId}`
+        `http://travel-service-server-by-prisma-tqp8.vercel.app/travel/one/${travelId}`
       );
 
       setTravelPlace(resData.data["data"].travelPlace);
@@ -132,7 +132,7 @@ function EditMyTravel() {
       //send data from formData to API (http://localhost:4000/travel) PUT
       try {
         const response = await axios.put(
-          `http://localhost:4000/travel/${travelId}`,
+          `http://travel-service-server-by-prisma-tqp8.vercel.app/${travelId}`,
           formData,
           {
             headers: {
@@ -189,7 +189,7 @@ function EditMyTravel() {
                 src={
                   travellerImage == ""
                     ? Profile
-                    : `http://localhost:4000/images/traveller/${travellerImage}`
+                    : `${travellerImage}`
                 }
               />
               {/* logout */}
@@ -276,7 +276,7 @@ function EditMyTravel() {
               travelNewImage == null
                 ? travelImage == ""
                   ? Travel
-                  : `http://localhost:4000/images/travel/${travelImage}`
+                  : `${travelImage}`
                 : URL.createObjectURL(travelNewImage)
             }
             alt="travel logo"

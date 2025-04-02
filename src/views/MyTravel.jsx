@@ -49,7 +49,7 @@ function MyTravel() {
     //Get data From DB of traveller that login and show in table
     const getAllTravel = async () => {
       const resData = await axios.get(
-        `http://localhost:4000/travel/${traveller.travellerId}`
+        `http://travel-service-server-by-prisma-tqp8.vercel.app/travel/${traveller.travellerId}`
       );
       //Have a data
       if (resData.status == 200) {
@@ -76,7 +76,7 @@ function MyTravel() {
       // });
       
       //Use Axios===========================
-      const response = await axios.delete(`http://localhost:4000/travel/${travelId}`); 
+      const response = await axios.delete(`http://travel-service-server-by-prisma-tqp8.vercel.app/${travelId}`); 
         
       if (response.status == 200) {
         alert("ลบข้อมูลเรียบร้อยOwO");
@@ -114,7 +114,7 @@ function MyTravel() {
               <Avatar
                 src={
                   travellerImage
-                    ? `http://localhost:4000/images/traveller/${travellerImage}`
+                    ? `${travellerImage}`
                     : Profile
                 }
               />
@@ -176,7 +176,7 @@ function MyTravel() {
                       <Avatar
                         src={
                           row.travelImage
-                            ? `http://localhost:4000/images/travel/${row.travelImage}`
+                            ? `${row.travelImage}`
                             : Place
                         }
                         sx={{ width: 60, height: 60, boxShadow: 4 }}

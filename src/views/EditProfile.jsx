@@ -99,7 +99,7 @@ function EditProfile() {
         //   }
         // );
         const response = await axios.put(
-          `http://localhost:4000/traveller/${travellerId}`,
+          `http://travel-service-server-by-prisma-tqp8.vercel.app/traveller/${travellerId}`,
           formData,
           {
             headers: {
@@ -152,7 +152,7 @@ function EditProfile() {
                 src={
                   travellerImage == ""
                     ? Profile
-                    : `http://localhost:4000/images/traveller/${travellerImage}`
+                    : `${travellerImage}`
                 }
               />
               <Link
@@ -224,7 +224,7 @@ function EditProfile() {
           <Avatar
             src={
               travellerNewImage == null
-                ? `http://localhost:4000/images/traveller/${travellerImage}`
+                ? `${travellerImage}`
                 : URL.createObjectURL(travellerNewImage)
             }
             alt="travel logo"
